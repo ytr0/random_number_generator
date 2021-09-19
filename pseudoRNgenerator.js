@@ -30,8 +30,7 @@ async function getAsyncPseudoRandomNumber(seedInStr, min, max){
 
 const resultTxt = document.querySelector('.json_string');
 (async ()=>{
-  //var dt = new Date();
-  //const today = ""//dt.getFullYear() + "/" +  (dt.getMonth() + 1) + "/"+ dt.getDate()
+  //https://eodhistoricaldata.com/api/eod/ETH-USD.CC?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&filter=last_close&order=d&fmt=json
   const eth_usd_rates = await fetch("https://eodhistoricaldata.com/api/eod/ETH-USD.CC?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&filter=last_close&order=d&fmt=json", {mode:"cors"})
   .then(response => response.text())
   const seed = eth_usd_rates;
