@@ -28,7 +28,7 @@ async function getAsyncPseudoRandomNumber(seedInStr, min, max){
   });
 }
 
-const resultTxt = document.querySelector('.json_string');
+
 (async ()=>{
   //https://eodhistoricaldata.com/api/eod/ETH-USD.CC?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&filter=last_close&order=d&fmt=json
   const eth_usd_rates = await fetch("https://eodhistoricaldata.com/api/eod/ETH-USD.CC?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&filter=last_close&order=d&fmt=json", {mode:"cors"})
@@ -36,6 +36,8 @@ const resultTxt = document.querySelector('.json_string');
   const seed = eth_usd_rates;
   console.log(seed);
   const result = await getAsyncPseudoRandomNumber(seed, 0, 1000);
+  const resultTxt = document.querySelector('.json_string');
   resultTxt.innerText = result;
   return;
 })();
+
