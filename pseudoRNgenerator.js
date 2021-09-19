@@ -33,6 +33,15 @@ const resultTxt = document.querySelector('.json_string');
   const eth_usd_rates = await fetch("https://eodhistoricaldata.com/api/eod/ETH-USD.CC?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&filter=last_close&order=d&fmt=json", {mode:"cors"})
   //const eth_usd_rates = await fetch("https://young-leaf-7106.on.fleek.co/", {mode:"cors"})
   .then(response => response.text())
+  //.then(function(response) {
+  //  return response.text();
+  //})
+  //.then(function(data) {
+   // const parser = new DOMParser();
+  //  const doc = parser.parseFromString(data, "text/html");
+   // const message = doc.getElementsByClassName("json_string").innerHTML
+  //  return message;
+  //});
   const seed = eth_usd_rates;
   console.log(seed);
   const result = await getAsyncPseudoRandomNumber(seed, 0, 1000);
