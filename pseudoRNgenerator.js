@@ -30,13 +30,14 @@ async function getAsyncPseudoRandomNumber(seedInStr, min, max){
 
 const resultTxt = document.querySelector('.json_string');
 (async ()=>{
-  //const eth_usd_rates = await fetch("https://eodhistoricaldata.com/api/eod/ETH-USD.CC?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&filter=last_close&order=d&fmt=json", {mode:"cors"})
-  const eth_usd_rates = await fetch("https://young-leaf-7106.on.fleek.co/", {mode:"cors"})
+  const eth_usd_rates = await fetch("https://eodhistoricaldata.com/api/eod/ETH-USD.CC?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&filter=last_close&order=d&fmt=json", {mode:"cors"})
+  //const eth_usd_rates = await fetch("https://young-leaf-7106.on.fleek.co/", {mode:"cors"})
   .then(response => response.text())
 
   const seed = eth_usd_rates;
   console.log(seed);
   const result = await getAsyncPseudoRandomNumber(seed, 0, 1000);
+  console.log(result);
   resultTxt.innerText = result;
   return;
 })();
